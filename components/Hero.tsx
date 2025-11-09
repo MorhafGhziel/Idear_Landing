@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="flex items-center justify-center gap-4 mb-8"
         >
-          <h1 className="text-6xl md:text-8xl font-bold text-white">IDEAR</h1>
+          <h1 className="text-6xl md:text-8xl font-bold text-white">IEDAR</h1>
         </motion.div>
 
         <motion.p

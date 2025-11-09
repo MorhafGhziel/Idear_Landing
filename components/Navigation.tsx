@@ -79,7 +79,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
-            <div className="text-2xl font-bold text-white">IDear</div>
+            <div className="text-2xl font-bold text-white">IEDAR</div>
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">

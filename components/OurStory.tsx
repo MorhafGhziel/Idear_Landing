@@ -45,7 +45,7 @@ export default function OurStory() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl leading-relaxed text-white/80 text-center max-w-4xl mx-auto"
           >
-            لأننا في <span className="text-secondary font-bold">IDEAR</span> نؤمن أن كل
+            لأننا في <span className="text-secondary font-bold">IEDAR</span> نؤمن أن كل
             دار تبدأ بفكرة، وكل فكرة تحتاج مساحة تنبض بالحياة. كونا منظومة لا تبني
             جدارًا فحسب، بل تصنع بيئات تلهم وتمنحك شعور الإنتماء للدار
           </motion.p>

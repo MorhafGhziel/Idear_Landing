@@ -62,7 +62,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 
 const CONTACT_INFO = [
   { icon: "📍", text: "الرياض، المملكة العربية السعودية" },
-  { icon: "📧", text: "info@idear.sa" },
+  { icon: "📧", text: "info@iedar.sa" },
   { icon: "📞", text: "+966 XX XXX XXXX" },
 ];
 
@@ -85,7 +85,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="mb-6"
             >
-              <div className="text-4xl font-bold">IDEAR</div>
+              <div className="text-4xl font-bold">IEDAR</div>
             </motion.div>
 
             <p className="text-white/80 leading-relaxed mb-6 max-w-md">
@@ -147,7 +147,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 text-sm">
-            <p>© 2025 IDEAR. جميع الحقوق محفوظة</p>
+            <p>© 2025 IEDAR. جميع الحقوق محفوظة</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-secondary transition-colors">
                 سياسة الخصوصية

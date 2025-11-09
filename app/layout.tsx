@@ -21,7 +21,7 @@ const ibmPlexSansArabic = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "IDEAR - Transforming Ideas into Living Spaces",
+  title: "IEDAR - Transforming Ideas into Living Spaces",
   description: "تحويل الأفكار إلى فضاءات حية تلهم الانتماء",
 };
 

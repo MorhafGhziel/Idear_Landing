@@ -46,7 +46,7 @@ export default function OurVision() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/3.jpg"
-                alt="رؤية IDEAR"
+                alt="رؤية IEDAR"
                 width={800}
                 height={600}
                 className="w-full h-auto"
