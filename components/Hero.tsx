@@ -29,7 +29,7 @@ export default function Hero() {
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/build3.jpg')`,
+            backgroundImage: `url('/images/hero.png')`,
             filter: "brightness(0.4) contrast(1.1)",
           }}
         />
@@ -37,14 +37,14 @@ export default function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(15, 15, 15, 0.7) 0%, rgba(15, 15, 15, 0.4) 40%, rgba(15, 15, 15, 0.6) 100%)",
+              "linear-gradient(180deg, rgba(15, 15, 15, 0.4) 0%, rgba(15, 15, 15, 0.2) 40%, rgba(15, 15, 15, 0.3) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at center, transparent 0%, rgba(15, 15, 15, 0.8) 100%)",
+              "radial-gradient(circle at center, transparent 0%, rgba(15, 15, 15, 0.5) 100%)",
           }}
         />
       </motion.div>
