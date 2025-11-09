@@ -37,7 +37,7 @@ export default function OurStory() {
           className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -54,7 +54,7 @@ export default function OurStory() {
           className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(166, 124, 82, 0.12) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -120,7 +120,7 @@ export default function OurStory() {
                 className="h-0.5 w-24 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.25)",
                 }}
               />
               <div className="w-2 h-2 bg-secondary rotate-45" />
@@ -146,7 +146,7 @@ export default function OurStory() {
               style={{
                 background:
                   "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)",
-                border: "1px solid rgba(201, 169, 97, 0.2)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 boxShadow:
                   "0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
               }}
@@ -249,7 +249,7 @@ export default function OurStory() {
               }}
               className="absolute -top-6 -right-6 w-16 h-16 border border-secondary/30 rounded-xl pointer-events-none"
               style={{
-                boxShadow: "inset 0 0 20px rgba(201, 169, 97, 0.1)",
+                boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.08)",
               }}
             />
           </motion.div>

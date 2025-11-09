@@ -49,12 +49,11 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Animated Gold Particles */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.15, 0.25, 0.15],
+            opacity: [0.3, 0.5, 0.3],
             rotate: [0, 90, 0],
           }}
           transition={{
@@ -65,13 +64,13 @@ export default function Hero() {
           className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.2) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 70%)",
           }}
         />
         <motion.div
           animate={{
             scale: [1, 1.4, 1],
-            opacity: [0.12, 0.22, 0.12],
+            opacity: [0.25, 0.45, 0.25],
             rotate: [0, -90, 0],
           }}
           transition={{
@@ -83,7 +82,7 @@ export default function Hero() {
           className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(166, 124, 82, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -133,7 +132,7 @@ export default function Hero() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              textShadow: "0 0 80px rgba(201, 169, 97, 0.3)",
+              textShadow: "0 0 80px rgba(255, 255, 255, 0.2)",
             }}
           >
             IEDAR
@@ -147,7 +146,7 @@ export default function Hero() {
             className="h-1 w-20 mx-auto rounded-full origin-center"
             style={{
               background: "var(--gradient-gold)",
-              boxShadow: "0 4px 24px rgba(201, 169, 97, 0.5)",
+              boxShadow: "0 4px 24px rgba(255, 255, 255, 0.3)",
             }}
           />
         </motion.div>
@@ -190,7 +189,7 @@ export default function Hero() {
           <motion.button
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 20px 60px rgba(201, 169, 97, 0.4)",
+              boxShadow: "0 20px 60px rgba(255, 255, 255, 0.25)",
             }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {
@@ -210,7 +209,7 @@ export default function Hero() {
             className="group relative px-8 py-4 text-base md:text-lg font-bold text-primary rounded-xl cursor-pointer overflow-hidden transition-all duration-300"
             style={{
               background: "var(--gradient-gold)",
-              boxShadow: "0 8px 32px rgba(201, 169, 97, 0.3)",
+              boxShadow: "0 8px 32px rgba(255, 255, 255, 0.2)",
             }}
           >
             <motion.div
@@ -284,14 +283,14 @@ export default function Hero() {
             className="w-5 h-10 border-2 rounded-full flex items-start justify-center p-1.5"
             style={{
               borderColor: "var(--secondary)",
-              boxShadow: "0 0 20px rgba(201, 169, 97, 0.2)",
+              boxShadow: "0 0 20px rgba(255, 255, 255, 0.15)",
             }}
           >
             <motion.div
               className="w-1 h-2 rounded-full"
               style={{
                 background: "var(--gradient-gold)",
-                boxShadow: "0 2px 8px rgba(201, 169, 97, 0.5)",
+                boxShadow: "0 2px 8px rgba(255, 255, 255, 0.3)",
               }}
             />
           </div>

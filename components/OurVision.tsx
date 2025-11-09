@@ -57,7 +57,7 @@ export default function OurVision() {
           className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -103,7 +103,7 @@ export default function OurVision() {
                 style={{
                   scale: imageScale,
                   boxShadow:
-                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.2)",
+                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15)",
                 }}
                 className="relative rounded-2xl overflow-hidden group"
               >
@@ -119,7 +119,7 @@ export default function OurVision() {
                   className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity duration-700"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(201, 169, 97, 0.3) 0%, rgba(15, 15, 15, 0.6) 100%)",
+                      "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(15, 15, 15, 0.6) 100%)",
                   }}
                 />
               </motion.div>
@@ -133,7 +133,7 @@ export default function OurVision() {
                 }}
                 className="absolute -top-6 -right-6 w-20 h-20 border-2 border-secondary/30 rounded-full"
                 style={{
-                  boxShadow: "inset 0 0 20px rgba(201, 169, 97, 0.2)",
+                  boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.15)",
                 }}
               />
             </div>
@@ -175,7 +175,7 @@ export default function OurVision() {
                   className="h-0.5 w-24 rounded-full"
                   style={{
                     background: "var(--gradient-gold)",
-                    boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
+                    boxShadow: "0 4px 16px rgba(255, 255, 255, 0.25)",
                   }}
                 />
                 <div className="w-2 h-2 bg-secondary rotate-45" />
@@ -189,8 +189,8 @@ export default function OurVision() {
               className="relative rounded-xl p-6"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%)",
-                border: "1px solid rgba(201, 169, 97, 0.2)",
+                  "linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
               }}
             >
@@ -236,7 +236,7 @@ export default function OurVision() {
                       className="w-3 h-3 rounded-sm"
                       style={{
                         background: "var(--gradient-gold)",
-                        boxShadow: "0 4px 12px rgba(201, 169, 97, 0.4)",
+                        boxShadow: "0 4px 12px rgba(255, 255, 255, 0.25)",
                       }}
                     />
                   </div>
@@ -246,8 +246,8 @@ export default function OurVision() {
                       className="relative inline-block rounded-lg px-3 py-2 transition-all duration-300"
                       style={{
                         background:
-                          "linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0.03) 100%)",
-                        border: "1px solid rgba(201, 169, 97, 0.15)",
+                          "linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)",
+                        border: "1px solid rgba(255, 255, 255, 0.12)",
                       }}
                     >
                       <p className="text-white/90 font-medium text-base">

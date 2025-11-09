@@ -61,7 +61,7 @@ export default function OurMission() {
           className="absolute top-20 right-1/4 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.2) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -78,7 +78,7 @@ export default function OurMission() {
           className="absolute bottom-20 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(166, 124, 82, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -139,7 +139,7 @@ export default function OurMission() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.2)",
                 }}
               />
               <div className="w-2 h-2 bg-secondary rotate-45" />
@@ -147,7 +147,7 @@ export default function OurMission() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.2)",
                 }}
               />
             </motion.div>
@@ -163,10 +163,10 @@ export default function OurMission() {
                 className="inline-block rounded-2xl p-8 md:p-10 max-w-4xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(166, 124, 82, 0.05) 100%)",
-                  border: "1px solid rgba(201, 169, 97, 0.15)",
+                    "linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.04) 100%)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
                   boxShadow:
-                    "0 20px 60px rgba(201, 169, 97, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
+                    "0 20px 60px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05)",
                 }}
               >
                 <p className="text-lg md:text-xl lg:text-2xl leading-relaxed text-white/90 font-light text-pretty">
@@ -245,22 +245,28 @@ export default function OurMission() {
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)",
-                  border: "1px solid rgba(201, 169, 97, 0.2)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   boxShadow:
                     "0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
                 }}
               >
-                {/* Icon Container */}
+                {/* Decorative Element */}
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
-                  className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl relative overflow-hidden"
+                  className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg relative"
                   style={{
-                    background: "var(--gradient-gold)",
-                    boxShadow: "0 8px 24px rgba(201, 169, 97, 0.3)",
+                    border: "2px solid rgba(255, 255, 255, 0.3)",
                   }}
                 >
-                  <span className="text-2xl relative z-10">{item.icon}</span>
+                  <div
+                    className="absolute inset-2 rounded-sm"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                    }}
+                  />
                 </motion.div>
 
                 {/* Content */}

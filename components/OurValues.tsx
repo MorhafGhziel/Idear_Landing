@@ -12,37 +12,37 @@ export default function OurValues() {
       title: "الأصالة",
       desc: "نحتفي بالهوية السعودية ونعكس تراثنا في كل تصميم نبدعه",
       icon: "🏛️",
-      gradient: "from-[#C9A961] to-[#B89750]",
+      gradient: "from-[#FFFFFF] to-[#CCCCCC]",
     },
     {
       title: "الابتكار",
       desc: "نستشرف المستقبل بحلول معمارية رائدة تواكب العصر",
       icon: "💡",
-      gradient: "from-[#E5C570] to-[#C9A961]",
+      gradient: "from-[#E5E5E5] to-[#FFFFFF]",
     },
     {
       title: "الاستدامة",
       desc: "نلتزم بحماية البيئة وبناء مستقبل أخضر للأجيال القادمة",
       icon: "🌱",
-      gradient: "from-[#A67C52] to-[#8B6F47]",
+      gradient: "from-[#808080] to-[#666666]",
     },
     {
       title: "التميز",
       desc: "نسعى للكمال في كل تفصيلة ونقدم أعلى معايير الجودة",
       icon: "⭐",
-      gradient: "from-[#D4B96A] to-[#C9A961]",
+      gradient: "from-[#F5F5F5] to-[#FFFFFF]",
     },
     {
       title: "الانتماء",
       desc: "نخلق فضاءات تعزز الروابط الإنسانية وتحتضن المجتمع",
       icon: "🤝",
-      gradient: "from-[#C9A961] to-[#A67C52]",
+      gradient: "from-[#FFFFFF] to-[#808080]",
     },
     {
       title: "الإلهام",
       desc: "نصمم بيئات تحفز الإبداع وتلهم العقول والقلوب",
       icon: "✨",
-      gradient: "from-[#E5C570] to-[#B89750]",
+      gradient: "from-[#E5E5E5] to-[#CCCCCC]",
     },
   ];
 
@@ -72,7 +72,7 @@ export default function OurValues() {
           className="absolute top-20 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -90,7 +90,7 @@ export default function OurValues() {
           className="absolute bottom-20 left-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(166, 124, 82, 0.12) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -149,7 +149,7 @@ export default function OurValues() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.2)",
                 }}
               />
               <div className="w-2 h-2 bg-secondary rotate-45" />
@@ -157,7 +157,7 @@ export default function OurValues() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.2)",
                 }}
               />
             </motion.div>
@@ -197,22 +197,27 @@ export default function OurValues() {
                   style={{
                     background:
                       "linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)",
-                    border: "1px solid rgba(201, 169, 97, 0.2)",
+                    border: "1px solid rgba(255, 255, 255, 0.15)",
                     boxShadow:
                       "0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
                   }}
                 >
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 10 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className={`mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br ${value.gradient} relative overflow-hidden`}
+                    className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg relative"
                     style={{
-                      boxShadow: "0 8px 32px rgba(201, 169, 97, 0.25)",
+                      border: "2px solid rgba(255, 255, 255, 0.3)",
                     }}
                   >
-                    <span className="text-2xl relative z-10 filter drop-shadow-sm">
-                      {value.icon}
-                    </span>
+                    <div
+                      className="absolute inset-2 rounded-sm"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                      }}
+                    />
                   </motion.div>
 
                   <h3

@@ -98,7 +98,7 @@ export default function Footer() {
           className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -126,7 +126,7 @@ export default function Footer() {
                   className="h-0.5 w-20 rounded-full mb-4"
                   style={{
                     background: "var(--gradient-gold)",
-                    boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                    boxShadow: "0 4px 16px rgba(255, 255, 255, 0.2)",
                   }}
                 />
               </motion.div>
@@ -170,8 +170,8 @@ export default function Footer() {
                     className="relative w-10 h-10 rounded-lg flex items-center justify-center group cursor-pointer"
                     style={{
                       background:
-                        "linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.08) 100%)",
-                      border: "1px solid rgba(201, 169, 97, 0.2)",
+                        "linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%)",
+                      border: "1px solid rgba(255, 255, 255, 0.15)",
                       transition:
                         "background 0.15s ease-out, border-color 0.15s ease-out",
                     }}
@@ -186,7 +186,7 @@ export default function Footer() {
                     <motion.div
                       className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none"
                       style={{
-                        boxShadow: "0 0 24px rgba(201, 169, 97, 0.4)",
+                        boxShadow: "0 0 24px rgba(255, 255, 255, 0.25)",
                         transition: "opacity 0.15s ease-out",
                       }}
                     />
@@ -311,7 +311,7 @@ export default function Footer() {
               className="h-px w-full"
               style={{
                 background:
-                  "linear-gradient(to right, transparent, rgba(201, 169, 97, 0.3), transparent)",
+                  "linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent)",
               }}
             />
           </motion.div>

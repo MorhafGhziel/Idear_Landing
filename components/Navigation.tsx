@@ -159,7 +159,7 @@ export default function Navigation() {
               className="w-6 h-0.5 rounded-full origin-center"
               style={{
                 background: "var(--gradient-gold)",
-                boxShadow: "0 2px 8px rgba(201, 169, 97, 0.3)",
+                boxShadow: "0 2px 8px rgba(255, 255, 255, 0.2)",
               }}
             />
             <motion.span
@@ -168,7 +168,7 @@ export default function Navigation() {
               className="w-6 h-0.5 rounded-full"
               style={{
                 background: "var(--gradient-gold)",
-                boxShadow: "0 2px 8px rgba(201, 169, 97, 0.3)",
+                boxShadow: "0 2px 8px rgba(255, 255, 255, 0.2)",
               }}
             />
             <motion.span
@@ -180,7 +180,7 @@ export default function Navigation() {
               className="w-6 h-0.5 rounded-full origin-center"
               style={{
                 background: "var(--gradient-gold)",
-                boxShadow: "0 2px 8px rgba(201, 169, 97, 0.3)",
+                boxShadow: "0 2px 8px rgba(255, 255, 255, 0.2)",
               }}
             />
           </button>
@@ -219,7 +219,7 @@ export default function Navigation() {
                       className="absolute inset-0 rounded-lg"
                       style={{
                         background: "var(--gradient-gold)",
-                        boxShadow: "0 4px 24px rgba(201, 169, 97, 0.4)",
+                        boxShadow: "0 4px 24px rgba(255, 255, 255, 0.25)",
                       }}
                       transition={{
                         type: "spring",
@@ -234,7 +234,7 @@ export default function Navigation() {
                     <motion.div
                       className="absolute inset-0 rounded-lg bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{
-                        boxShadow: "inset 0 0 20px rgba(201, 169, 97, 0.1)",
+                        boxShadow: "inset 0 0 20px rgba(255, 255, 255, 0.08)",
                       }}
                     />
                   )}
@@ -310,7 +310,7 @@ export default function Navigation() {
         style={{
           background:
             "linear-gradient(180deg, rgba(15, 15, 15, 0.99) 0%, rgba(26, 22, 22, 0.99) 100%)",
-          borderLeft: "1px solid rgba(201, 169, 97, 0.2)",
+          borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
           boxShadow: "-8px 0 32px rgba(0, 0, 0, 0.8)",
           top: 0,
           right: 0,
@@ -376,7 +376,7 @@ export default function Navigation() {
                     : "rgba(255, 255, 255, 0.05)",
                   border: isActive
                     ? "none"
-                    : "1px solid rgba(201, 169, 97, 0.1)",
+                    : "1px solid rgba(255, 255, 255, 0.08)",
                 }}
               >
                 {/* Active indicator */}
@@ -385,7 +385,7 @@ export default function Navigation() {
                     layoutId="mobileActiveIndicator"
                     className="absolute inset-0 rounded-xl"
                     style={{
-                      boxShadow: "0 4px 24px rgba(201, 169, 97, 0.4)",
+                      boxShadow: "0 4px 24px rgba(255, 255, 255, 0.25)",
                     }}
                     transition={{
                       type: "spring",

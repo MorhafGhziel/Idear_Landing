@@ -21,28 +21,28 @@ const PILLARS: Pillar[] = [
     desc: "نبدع تصاميم معمارية فريدة تجمع بين الجمال والوظيفية، مع الاهتمام بكل تفصيلة لتحقيق رؤية عملائنا وتجاوز توقعاتهم",
     image: "/images/build4.jpg",
     stats: { value: "500+", label: "تصميم متميز" },
-    color: "#C9A961",
+    color: "#FFFFFF",
   },
   {
     title: "التطوير المعماري",
     desc: "نطور مشاريع معمارية متكاملة من المفهوم إلى التنفيذ، باستخدام أحدث التقنيات والمواد لتحويل الأفكار إلى واقع ملموس",
     image: "/images/build5.jpg",
     stats: { value: "200+", label: "مشروع مطور" },
-    color: "#D4B96A",
+    color: "#F5F5F5",
   },
   {
     title: "التطوير الحضري",
     desc: "نساهم في تطوير المجتمعات والمناطق الحضرية من خلال تصميم فضاءات متكاملة تعزز جودة الحياة وتنمي الانتماء المجتمعي",
     image: "/images/build6.jpg",
     stats: { value: "50+", label: "مشروع حضري" },
-    color: "#E5C570",
+    color: "#E5E5E5",
   },
   {
     title: "التطوير المستدام",
     desc: "نلتزم بممارسات البناء المستدام والتصميم الأخضر، لخلق بيئات صحية تحافظ على الموارد وتحترم الطبيعة",
     image: "/images/build1.jpg",
     stats: { value: "95%", label: "كفاءة طاقة" },
-    color: "#A67C52",
+    color: "#808080",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function OurPillars() {
           className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -228,7 +228,7 @@ export default function OurPillars() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.25)",
                 }}
               />
               <div className="w-2 h-2 bg-secondary rotate-45" />
@@ -236,7 +236,7 @@ export default function OurPillars() {
                 className="h-0.5 w-16 rounded-full"
                 style={{
                   background: "var(--gradient-gold)",
-                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
+                  boxShadow: "0 4px 16px rgba(255, 255, 255, 0.25)",
                 }}
               />
             </motion.div>
@@ -275,10 +275,10 @@ export default function OurPillars() {
                     border:
                       activePillar === i
                         ? "1px solid transparent"
-                        : "1px solid rgba(201, 169, 97, 0.2)",
+                        : "1px solid rgba(255, 255, 255, 0.15)",
                     boxShadow:
                       activePillar === i
-                        ? "0 8px 32px rgba(201, 169, 97, 0.4)"
+                        ? "0 8px 32px rgba(255, 255, 255, 0.25)"
                         : "none",
                   }}
                 >
@@ -308,7 +308,7 @@ export default function OurPillars() {
                     }}
                     style={{
                       background: "var(--gradient-gold)",
-                      boxShadow: "0 0 20px rgba(201, 169, 97, 0.6)",
+                      boxShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
                     }}
                   />
                 )}
@@ -379,7 +379,7 @@ export default function OurPillars() {
                 className="relative rounded-2xl overflow-hidden group w-full min-h-[250px] lg:min-h-[400px] aspect-4/3"
                 style={{
                   boxShadow:
-                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.3)",
+                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2)",
                 }}
               >
                 <Image
