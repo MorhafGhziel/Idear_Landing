@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-
 import { useRef } from "react";
 
 export default function Hero() {
@@ -9,112 +8,191 @@ export default function Hero() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-
     offset: ["start start", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
     <div
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0F0F0F 0%, #1A1A1A 50%, #0F0F0F 100%)",
+      }}
     >
       {/* Background Image with Parallax */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
+      <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
         <div
-          className="w-full h-full bg-cover bg-center opacity-30"
+          className="w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/Pic1.jpg')`,
+            backgroundImage: `url('/images/build3.jpg')`,
+            filter: "brightness(0.4) contrast(1.1)",
           }}
         />
-        {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-linear-to-b from-primary/60 via-primary/40 to-primary/80" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(15, 15, 15, 0.7) 0%, rgba(15, 15, 15, 0.4) 40%, rgba(15, 15, 15, 0.6) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at center, transparent 0%, rgba(15, 15, 15, 0.8) 100%)",
+          }}
+        />
       </motion.div>
 
-      {/* Decorative Elements */}
+      {/* Animated Gold Particles */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.3, 1],
+            opacity: [0.15, 0.25, 0.15],
+            rotate: [0, 90, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 20,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"
+          className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201, 169, 97, 0.2) 0%, transparent 70%)",
+          }}
         />
         <motion.div
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.15, 0.1],
+            scale: [1, 1.4, 1],
+            opacity: [0.12, 0.22, 0.12],
+            rotate: [0, -90, 0],
           }}
           transition={{
-            duration: 10,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1,
+            delay: 2,
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/15 rounded-full blur-3xl"
+          className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(166, 124, 82, 0.15) 0%, transparent 70%)",
+          }}
         />
       </div>
 
       {/* Content */}
       <motion.div
         style={{ opacity }}
-        className="relative z-10 text-center px-6 max-w-6xl mx-auto"
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
       >
+        {/* Decorative Line Top */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mb-8"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tracking-tight mb-4">
+          <div className="flex items-center justify-center gap-3">
+            <div
+              className="h-px w-16 md:w-24"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent, var(--secondary), transparent)",
+              }}
+            />
+            <div className="w-1.5 h-1.5 bg-secondary rotate-45" />
+            <div
+              className="h-px w-16 md:w-24"
+              style={{
+                background:
+                  "linear-gradient(to left, transparent, var(--secondary), transparent)",
+              }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Main Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-6"
+        >
+          <h1
+            className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 relative"
+            style={{
+              background: "var(--gradient-gold)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              textShadow: "0 0 80px rgba(201, 169, 97, 0.3)",
+            }}
+          >
             IEDAR
           </h1>
+
+          {/* Decorative Underline */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="w-24 h-1 bg-secondary mx-auto"
+            transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="h-1 w-20 mx-auto rounded-full origin-center"
+            style={{
+              background: "var(--gradient-gold)",
+              boxShadow: "0 4px 24px rgba(201, 169, 97, 0.5)",
+            }}
           />
         </motion.div>
 
-        <motion.p
+        {/* Arabic Tagline */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-2xl md:text-4xl lg:text-5xl text-white/95 font-light mb-6 leading-tight"
+          transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-6"
         >
-          للفكرة دار
-        </motion.p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-light tracking-wide">
+            للفكرة دار
+          </h2>
+        </motion.div>
 
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg md:text-xl lg:text-2xl text-secondary font-medium mb-12 max-w-3xl mx-auto leading-relaxed"
+          transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-lg md:text-xl lg:text-2xl font-medium mb-10 max-w-3xl mx-auto leading-relaxed"
+          style={{
+            background:
+              "linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 50%, var(--accent-bronze) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
         >
           نحول الأفكار إلى فضاءات حية تلهم الانتماء
         </motion.p>
 
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 1, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.button
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 0 30px rgba(236, 211, 109, 0.5)",
+              boxShadow: "0 20px 60px rgba(201, 169, 97, 0.4)",
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => {
               const section = document.getElementById("قصتنا");
               if (section) {
@@ -129,31 +207,94 @@ export default function Hero() {
                 });
               }
             }}
-            className="px-10 py-5 bg-secondary text-primary rounded-xl font-bold text-lg hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 active:scale-95 relative overflow-hidden group"
+            className="group relative px-8 py-4 text-base md:text-lg font-bold text-primary rounded-xl cursor-pointer overflow-hidden transition-all duration-300"
+            style={{
+              background: "var(--gradient-gold)",
+              boxShadow: "0 8px 32px rgba(201, 169, 97, 0.3)",
+            }}
           >
-            <span className="relative z-10">تعرف علينا</span>
             <motion.div
-              className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              initial={false}
+              className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
+              initial={{ x: "-100%", opacity: 0 }}
+              whileHover={{ x: "100%", opacity: 1 }}
+              transition={{ duration: 0.8 }}
             />
+
+            <span className="relative z-10 flex items-center gap-2">
+              تعرف علينا
+              <motion.span
+                animate={{ x: [0, -5, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                ←
+              </motion.span>
+            </span>
           </motion.button>
+        </motion.div>
+
+        {/* Decorative Line Bottom */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12"
+        >
+          <div className="flex items-center justify-center gap-3">
+            <div
+              className="h-px w-12 md:w-20"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent, var(--accent-bronze))",
+              }}
+            />
+            <div className="flex gap-2">
+              <div className="w-1 h-1 bg-secondary rounded-full" />
+              <div className="w-1 h-1 bg-accent-bronze rounded-full" />
+              <div className="w-1 h-1 bg-secondary rounded-full" />
+            </div>
+            <div
+              className="h-px w-12 md:w-20"
+              style={{
+                background:
+                  "linear-gradient(to left, transparent, var(--accent-bronze))",
+              }}
+            />
+          </div>
         </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
         >
-          <motion.div className="w-1 h-2 bg-secondary rounded-full" />
+          <div className="text-xs text-neutral-400 tracking-widest">تصفح</div>
+          <div
+            className="w-5 h-10 border-2 rounded-full flex items-start justify-center p-1.5"
+            style={{
+              borderColor: "var(--secondary)",
+              boxShadow: "0 0 20px rgba(201, 169, 97, 0.2)",
+            }}
+          >
+            <motion.div
+              className="w-1 h-2 rounded-full"
+              style={{
+                background: "var(--gradient-gold)",
+                boxShadow: "0 2px 8px rgba(201, 169, 97, 0.5)",
+              }}
+            />
+          </div>
         </motion.div>
       </motion.div>
     </div>

@@ -12,6 +12,7 @@ interface Pillar {
     value: string;
     label: string;
   };
+  color: string;
 }
 
 const PILLARS: Pillar[] = [
@@ -20,24 +21,28 @@ const PILLARS: Pillar[] = [
     desc: "نبدع تصاميم معمارية فريدة تجمع بين الجمال والوظيفية، مع الاهتمام بكل تفصيلة لتحقيق رؤية عملائنا وتجاوز توقعاتهم",
     image: "/images/2.jpg",
     stats: { value: "500+", label: "تصميم متميز" },
+    color: "#C9A961",
   },
   {
     title: "التطوير المعماري",
     desc: "نطور مشاريع معمارية متكاملة من المفهوم إلى التنفيذ، باستخدام أحدث التقنيات والمواد لتحويل الأفكار إلى واقع ملموس",
     image: "/images/3.jpg",
     stats: { value: "200+", label: "مشروع مطور" },
+    color: "#D4B96A",
   },
   {
     title: "التطوير الحضري",
     desc: "نساهم في تطوير المجتمعات والمناطق الحضرية من خلال تصميم فضاءات متكاملة تعزز جودة الحياة وتنمي الانتماء المجتمعي",
     image: "/images/33.jpg",
     stats: { value: "50+", label: "مشروع حضري" },
+    color: "#E5C570",
   },
   {
     title: "التطوير المستدام",
     desc: "نلتزم بممارسات البناء المستدام والتصميم الأخضر، لخلق بيئات صحية تحافظ على الموارد وتحترم الطبيعة",
     image: "/images/2.jpg",
     stats: { value: "95%", label: "كفاءة طاقة" },
+    color: "#A67C52",
   },
 ];
 
@@ -49,11 +54,9 @@ export default function OurPillars() {
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const buttonsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
   const currentPillar = PILLARS[activePillar];
 
-  // Clean up interval when paused or not in view
   useEffect(() => {
     if (!isInView || isPaused) {
       if (progressIntervalRef.current) {
@@ -63,16 +66,14 @@ export default function OurPillars() {
     }
   }, [isInView, isPaused]);
 
-  // Progress tracking
   useEffect(() => {
     if (!isInView || isPaused) {
       return;
     }
 
     const startTime = Date.now();
-    const duration = 5000;
+    const duration = 6000;
 
-    // Reset progress asynchronously to avoid cascading renders
     const rafId = requestAnimationFrame(() => {
       setProgress(0);
     });
@@ -101,7 +102,6 @@ export default function OurPillars() {
     };
   }, [isInView, activePillar, isPaused]);
 
-  // Auto-switch logic
   useEffect(() => {
     if (!isInView) return;
 
@@ -115,13 +115,11 @@ export default function OurPillars() {
           setActivePillar((prev) => (prev + 1) % PILLARS.length);
           setProgress(0);
         }
-      }, 5000);
+      }, 6000);
     };
 
-    // Start auto-switch when section is in view
     startAutoSwitch();
 
-    // Cleanup on unmount or when out of view
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -132,9 +130,7 @@ export default function OurPillars() {
   const handlePillarClick = (index: number) => {
     setActivePillar(index);
     setProgress(0);
-    // Pause auto-switch temporarily
     setIsPaused(true);
-    // Resume after 10 seconds
     setTimeout(() => {
       setIsPaused(false);
     }, 10000);
@@ -144,189 +140,279 @@ export default function OurPillars() {
     <section
       id="ركائزنا"
       ref={ref}
-      className="relative py-32 bg-primary overflow-hidden"
+      className="relative py-20 md:py-24 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0F0F0F 0%, #1A1616 50%, #0F0F0F 100%)",
+      }}
     >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.08, 0.15, 0.08],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201, 169, 97, 0.12) 0%, transparent 70%)",
+          }}
+        />
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold mb-6 text-white"
-          >
-            ركائزنا
-          </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-4 max-w-6xl mx-auto"
+        >
+          <div className="flex items-center gap-3">
+            <span
+              className="text-4xl md:text-5xl font-bold opacity-20"
+              style={{
+                background: "var(--gradient-gold)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              05
+            </span>
+            <div
+              className="h-px flex-1 max-w-[150px]"
+              style={{
+                background:
+                  "linear-gradient(to right, var(--secondary), transparent)",
+              }}
+            />
+          </div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-32 h-1 bg-secondary mb-8 mx-auto"
-          />
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              style={{
+                background:
+                  "linear-gradient(135deg, #FFFFFF 0%, var(--secondary-light) 50%, var(--secondary) 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              ركائزنا
+            </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
-          >
-            الأسس التي نبني عليها نجاحنا ونقدم من خلالها خدماتنا المتميزة
-          </motion.p>
-        </div>
-
-        {/* Pillars Navigation */}
-        <div className="mb-16">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4">
-            {PILLARS.map((pillar, i) => (
-              <motion.button
-                key={pillar.title}
-                ref={(el) => {
-                  buttonsRef.current[i] = el;
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
+              transition={{
+                duration: 1,
+                delay: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="flex items-center justify-center gap-2 mb-6"
+            >
+              <div
+                className="h-0.5 w-16 rounded-full"
+                style={{
+                  background: "var(--gradient-gold)",
+                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
                 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
+              />
+              <div className="w-2 h-2 bg-secondary rotate-45" />
+              <div
+                className="h-0.5 w-16 rounded-full"
+                style={{
+                  background: "var(--gradient-gold)",
+                  boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
                 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => handlePillarClick(i)}
-                className={`relative px-6 py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-300 cursor-pointer ${
-                  activePillar === i
-                    ? "bg-secondary text-primary shadow-lg"
-                    : "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
+              />
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed"
+            >
+              الأسس التي نبني عليها نجاحنا ونقدم من خلالها خدماتنا المتميزة
+            </motion.p>
+          </div>
+
+          <div className="mb-10">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
+              {PILLARS.map((pillar, i) => (
+                <motion.button
+                  key={pillar.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handlePillarClick(i)}
+                  className="relative px-5 py-2.5 rounded-xl font-bold text-sm md:text-base transition-all duration-300 cursor-pointer overflow-hidden"
+                  style={{
+                    background:
+                      activePillar === i
+                        ? "var(--gradient-gold)"
+                        : "rgba(255, 255, 255, 0.05)",
+                    color: activePillar === i ? "#0F0F0F" : "#FFFFFF",
+                    border:
+                      activePillar === i
+                        ? "1px solid transparent"
+                        : "1px solid rgba(201, 169, 97, 0.2)",
+                    boxShadow:
+                      activePillar === i
+                        ? "0 8px 32px rgba(201, 169, 97, 0.4)"
+                        : "none",
+                  }}
+                >
+                  <span className="relative z-10">{pillar.title}</span>
+                </motion.button>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <div
+                className="relative h-1 rounded-full overflow-hidden"
+                style={{
+                  background: "rgba(255, 255, 255, 0.1)",
+                }}
               >
-                <span className="relative z-10">{pillar.title}</span>
-
-                {/* Active indicator dot */}
-                {activePillar === i && (
+                {!isPaused && isInView && (
                   <motion.div
-                    layoutId="activePillarDot"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-secondary rounded-full"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="absolute right-0 top-0 h-full rounded-full"
+                    initial={false}
+                    animate={{
+                      width: `${
+                        ((activePillar + progress / 100) / PILLARS.length) * 100
+                      }%`,
+                    }}
+                    transition={{
+                      width: { duration: 0.1, ease: "linear" },
+                    }}
+                    style={{
+                      background: "var(--gradient-gold)",
+                      boxShadow: "0 0 20px rgba(201, 169, 97, 0.6)",
+                    }}
                   />
                 )}
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Clean Progress Bar - RTL aligned */}
-          <div className="max-w-2xl mx-auto">
-            <div className="relative h-1 bg-white/10 rounded-full overflow-hidden">
-              {!isPaused && isInView && (
-                <motion.div
-                  className="absolute right-0 top-0 h-full bg-secondary rounded-full"
-                  initial={false}
-                  animate={{
-                    width: `${
-                      ((activePillar + progress / 100) / PILLARS.length) * 100
-                    }%`,
-                  }}
-                  transition={{
-                    width: { duration: 0.1, ease: "linear" },
-                  }}
-                  style={{
-                    boxShadow: "0 0 10px rgba(236, 211, 109, 0.5)",
-                  }}
-                />
-              )}
-              {isPaused && (
-                <motion.div
-                  className="absolute right-0 top-0 h-full bg-secondary/30 rounded-full"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  style={{
-                    width: `${((activePillar + 1) / PILLARS.length) * 100}%`,
-                  }}
-                />
-              )}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Active Pillar Content */}
-        <motion.div
-          key={activePillar}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
-        >
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            key={activePillar}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="grid lg:grid-cols-2 gap-10 items-center"
           >
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {currentPillar.title}
-            </h3>
-
-            <p className="text-lg text-white/80 leading-relaxed mb-8">
-              {currentPillar.desc}
-            </p>
-
-            {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-6"
             >
-              <div className="text-5xl font-bold text-secondary">
-                {currentPillar.stats.value}
+              <div>
+                <h3
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary) 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  {currentPillar.title}
+                </h3>
+
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.4,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="h-0.5 w-24 rounded-full origin-right"
+                  style={{
+                    background: `linear-gradient(to right, ${currentPillar.color}, transparent)`,
+                  }}
+                />
               </div>
-              <div className="text-white/80 font-medium">
-                {currentPillar.stats.label}
-              </div>
+
+              <p className="text-base md:text-lg text-white/80 leading-relaxed">
+                {currentPillar.desc}
+              </p>
             </motion.div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
             <motion.div
-              animate={{ y: [0, -15, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
             >
-              <Image
-                src={currentPillar.image}
-                alt={currentPillar.title}
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                priority={activePillar === 0}
-              />
-              <div
-                className="absolute inset-0"
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative rounded-2xl overflow-hidden group"
                 style={{
-                  background:
-                    "linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent)",
+                  boxShadow:
+                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.3)",
+                }}
+              >
+                <Image
+                  src={currentPillar.image}
+                  alt={currentPillar.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                  priority={activePillar === 0}
+                />
+
+                <div
+                  className="absolute inset-0 opacity-50 group-hover:opacity-30 transition-opacity duration-700"
+                  style={{
+                    background: `linear-gradient(135deg, ${currentPillar.color}40 0%, rgba(15, 15, 15, 0.7) 100%)`,
+                  }}
+                />
+              </motion.div>
+
+              <motion.div
+                animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute -top-4 -right-4 w-20 h-20 rounded-full"
+                style={{
+                  background: `radial-gradient(circle, ${currentPillar.color}40 0%, transparent 70%)`,
+                  boxShadow: `0 0 40px ${currentPillar.color}30`,
                 }}
               />
             </motion.div>
-
-            {/* Decorative Elements */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute -top-8 -right-8 w-24 h-24 bg-secondary/30 rounded-full blur-xl"
-            />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

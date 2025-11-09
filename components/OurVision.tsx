@@ -20,96 +20,235 @@ export default function OurVision() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 1.05]);
 
   return (
     <section
       id="رؤيتنا"
       ref={ref}
-      className="relative py-32 bg-background overflow-hidden"
+      className="relative py-20 md:py-24 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0F0F0F 0%, #1A1616 50%, #0F0F0F 100%)",
+      }}
     >
-      {/* Parallax Background Image */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
+      <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-5">
         <div
-          className="w-full h-full bg-cover bg-center opacity-10"
-          style={{ backgroundImage: `url('/images/2.jpg')` }}
+          className="w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: `url('/images/build2black.jpg')` }}
         />
       </motion.div>
 
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+          }}
+        />
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mb-4 max-w-6xl mx-auto"
+        >
+          <div className="flex items-center gap-3">
+            <span
+              className="text-4xl md:text-5xl font-bold opacity-20"
+              style={{
+                background: "var(--gradient-gold)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              03
+            </span>
+            <div
+              className="h-px flex-1 max-w-[150px]"
+              style={{
+                background:
+                  "linear-gradient(to right, var(--secondary), transparent)",
+              }}
+            />
+          </div>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-            className="relative order-2 md:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/3.jpg"
-                alt="رؤية IEDAR"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
+            <div className="relative">
               <motion.div
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-transparent"
+                style={{ scale: imageScale }}
+                className="relative rounded-2xl overflow-hidden group"
+                style={{
+                  boxShadow:
+                    "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.2)",
+                }}
+              >
+                <Image
+                  src="/images/build2.jpg"
+                  alt="رؤية IEDAR"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                
+                <div
+                  className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity duration-700"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(201, 169, 97, 0.3) 0%, rgba(15, 15, 15, 0.6) 100%)",
+                  }}
+                />
+              </motion.div>
+
+              <motion.div
+                animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute -top-6 -right-6 w-20 h-20 border-2 border-secondary/30 rounded-full"
+                style={{
+                  boxShadow: "inset 0 0 20px rgba(201, 169, 97, 0.2)",
+                }}
               />
             </div>
-
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -left-8 w-24 h-24 bg-secondary/30 rounded-full blur-xl"
-            />
-            <motion.div
-              animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/20 rounded-full blur-xl"
-            />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="order-1 md:order-2"
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2 space-y-6"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              رؤيتنا
-            </h2>
+            <div>
+              <h2
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #FFFFFF 0%, var(--secondary-light) 50%, var(--secondary) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                رؤيتنا
+              </h2>
+
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={isInView ? { scaleX: 1 } : {}}
+                transition={{
+                  duration: 1,
+                  delay: 0.3,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="flex items-center gap-2 origin-right mb-6"
+              >
+                <div
+                  className="h-0.5 w-24 rounded-full"
+                  style={{
+                    background: "var(--gradient-gold)",
+                    boxShadow: "0 4px 16px rgba(201, 169, 97, 0.4)",
+                  }}
+                />
+                <div className="w-2 h-2 bg-secondary rotate-45" />
+              </motion.div>
+            </div>
 
             <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-20 h-1 bg-secondary mb-8 origin-right"
-            />
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative rounded-xl p-6"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%)",
+                border: "1px solid rgba(201, 169, 97, 0.2)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+              }}
+            >
+              <p className="text-lg md:text-xl leading-relaxed text-white font-semibold mb-4">
+                أن نكون الخيار الأول في المملكة لتحويل الأفكار إلى واقع معماري
+                ملهم
+              </p>
 
-            <p className="text-xl leading-relaxed text-white/90 mb-6 font-medium text-pretty">
-              أن نكون الخيار الأول في المملكة لتحويل الأفكار إلى واقع معماري ملهم
-            </p>
+              <div
+                className="absolute top-0 right-0 w-20 h-20"
+                style={{
+                  background:
+                    "radial-gradient(circle at top right, var(--secondary) 0%, transparent 70%)",
+                  opacity: 0.2,
+                }}
+              />
+            </motion.div>
 
-            <p className="text-lg leading-relaxed text-white/70 mb-8">
-              نطمح لريادة قطاع التصميم المعماري في المملكة من خلال ابتكار فضاءات حية
-              تعكس الهوية السعودية وتلبي تطلعات رؤية 2030. نسعى لأن نكون جسراً يربط
-              بين التراث الأصيل والحداثة المستدامة، ونخلق بيئات ملهمة تحفز الإبداع
-              وتعزز الانتماء.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-base md:text-lg leading-relaxed text-white/80"
+            >
+              نطمح لريادة قطاع التصميم المعماري في المملكة من خلال ابتكار فضاءات
+              حية تعكس الهوية السعودية وتلبي تطلعات رؤية 2030.
+            </motion.p>
 
-            <div className="space-y-4">
+            <div className="space-y-3 pt-2">
               {VISION_POINTS.map((item, i) => (
                 <motion.div
                   key={item}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
-                  className="flex items-center gap-4"
+                  transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
+                  whileHover={{ x: -6 }}
+                  className="flex items-center gap-3 group cursor-pointer"
                 >
-                  <div className="w-3 h-3 bg-secondary rounded-full" />
-                  <p className="text-white/80 font-medium">{item}</p>
+                  <div className="relative flex-shrink-0">
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 45 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-3 h-3 rounded-sm"
+                      style={{
+                        background: "var(--gradient-gold)",
+                        boxShadow: "0 4px 12px rgba(201, 169, 97, 0.4)",
+                      }}
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <div
+                      className="relative inline-block rounded-lg px-3 py-2 transition-all duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0.03) 100%)",
+                        border: "1px solid rgba(201, 169, 97, 0.15)",
+                      }}
+                    >
+                      <p className="text-white/90 font-medium text-base">
+                        {item}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -119,4 +258,3 @@ export default function OurVision() {
     </section>
   );
 }
-

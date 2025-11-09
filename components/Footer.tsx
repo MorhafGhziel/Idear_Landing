@@ -18,7 +18,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     href: "#",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-4 h-4"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -32,7 +32,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     href: "#",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-4 h-4"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -50,7 +50,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     href: "#",
     icon: (
       <svg
-        className="w-6 h-6"
+        className="w-4 h-4"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -69,101 +69,251 @@ const CONTACT_INFO = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-primary text-white py-20 overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+    <footer
+      className="relative text-white py-16 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #0F0F0F 0%, #1A1616 50%, #0F0F0F 100%)",
+      }}
+    >
+      <div
+        className="absolute top-0 left-0 w-full h-px"
+        style={{
+          background:
+            "linear-gradient(to right, transparent, var(--secondary), transparent)",
+        }}
+      />
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%)",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-6"
-            >
-              <Image
-                src="/icons/iedar.svg"
-                alt="IEDAR Logo"
-                width={300}
-                height={100}
-                className="h-20 md:h-24 w-auto object-contain"
-              />
-            </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-10 mb-12">
+            <div className="md:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-6"
+              >
+                <Image
+                  src="/icons/iedar.svg"
+                  alt="IEDAR Logo"
+                  width={180}
+                  height={60}
+                  className="h-12 md:h-14 w-auto object-contain mb-4"
+                />
 
-            <p className="text-white/80 leading-relaxed mb-6 max-w-md">
-              نحول الأفكار إلى فضاءات حية تلهم الانتماء، جامعين بين الهوية
-              السعودية والابتكار المستدام
-            </p>
+                <div
+                  className="h-0.5 w-20 rounded-full mb-4"
+                  style={{
+                    background: "var(--gradient-gold)",
+                    boxShadow: "0 4px 16px rgba(201, 169, 97, 0.3)",
+                  }}
+                />
+              </motion.div>
 
-            <div className="flex gap-4">
-              {SOCIAL_LINKS.map((social) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  whileHover={{ scale: 1.2, y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-12 h-12 rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors text-white hover:text-primary"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
-            </div>
-          </div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-white/70 leading-relaxed mb-6 max-w-md text-base"
+              >
+                نحول الأفكار إلى فضاءات حية تلهم الانتماء، جامعين بين الهوية
+                السعودية والابتكار المستدام
+              </motion.p>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-secondary">
-              روابط سريعة
-            </h3>
-            <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
-                <motion.li key={link} whileHover={{ x: -5 }}>
-                  <a
-                    href={`#${link}`}
-                    className="text-white/70 hover:text-secondary transition-colors"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex gap-2"
+              >
+                {SOCIAL_LINKS.map((social, index) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.href}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.3 + index * 0.1,
+                      type: "spring",
+                    }}
+                    whileHover={{
+                      scale: 1.15,
+                      y: -3,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.08) 100%)",
+                      border: "1px solid rgba(201, 169, 97, 0.2)",
+                    }}
+                    aria-label={social.name}
                   >
-                    {link}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
+                    <span className="text-secondary group-hover:text-secondary-light transition-colors duration-300">
+                      {social.icon}
+                    </span>
+                  </motion.a>
+                ))}
+              </motion.div>
+            </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-secondary">
-              تواصل معنا
-            </h3>
-            <ul className="space-y-4 text-white/70">
-              {CONTACT_INFO.map((info, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span>{info.icon}</span>
-                  <span>{info.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+            <div className="md:col-span-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h3
+                  className="text-lg font-bold mb-4"
+                  style={{
+                    background: "var(--gradient-gold)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  روابط سريعة
+                </h3>
+                <ul className="space-y-2">
+                  {NAV_LINKS.map((link, index) => (
+                    <motion.li
+                      key={link}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
+                      whileHover={{ x: -4 }}
+                    >
+                      <a
+                        href={`#${link}`}
+                        className="text-white/60 hover:text-secondary transition-colors duration-300 inline-flex items-center gap-2 text-sm group"
+                      >
+                        <motion.span
+                          className="w-1 h-1 rounded-full bg-secondary/50 group-hover:bg-secondary transition-colors duration-300"
+                          whileHover={{ scale: 1.5 }}
+                        />
+                        {link}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 text-sm">
-            <p>© 2025 IEDAR. جميع الحقوق محفوظة</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-secondary transition-colors">
-                سياسة الخصوصية
-              </a>
-              <a href="#" className="hover:text-secondary transition-colors">
-                الشروط والأحكام
-              </a>
+            <div className="md:col-span-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <h3
+                  className="text-lg font-bold mb-4"
+                  style={{
+                    background: "var(--gradient-gold)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  تواصل معنا
+                </h3>
+                <ul className="space-y-3">
+                  {CONTACT_INFO.map((info, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
+                      whileHover={{ x: 4 }}
+                      className="flex items-start gap-3 group"
+                    >
+                      <span className="text-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        {info.icon}
+                      </span>
+                      <span className="text-white/70 group-hover:text-white/90 transition-colors duration-300 text-sm">
+                        {info.text}
+                      </span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
           </div>
+
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="mb-6"
+          >
+            <div
+              className="h-px w-full"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent, rgba(201, 169, 97, 0.3), transparent)",
+              }}
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-xs"
+          >
+            <p className="flex items-center gap-2">
+              <span>© 2025 IEDAR</span>
+              <span className="w-1 h-1 rounded-full bg-secondary/50" />
+              <span>جميع الحقوق محفوظة</span>
+            </p>
+            <div className="flex gap-6">
+              <motion.a
+                href="#"
+                whileHover={{ y: -2 }}
+                className="hover:text-secondary transition-all duration-300"
+              >
+                سياسة الخصوصية
+              </motion.a>
+              <motion.a
+                href="#"
+                whileHover={{ y: -2 }}
+                className="hover:text-secondary transition-all duration-300"
+              >
+                الشروط والأحكام
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </footer>
