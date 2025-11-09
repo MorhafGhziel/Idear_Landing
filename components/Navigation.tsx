@@ -99,7 +99,7 @@ export default function Navigation() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-100 transition-all duration-500",
         scrolled
           ? "bg-primary/95 backdrop-blur-2xl border-b border-secondary/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           : "bg-transparent border-b border-white/5"
@@ -291,7 +291,7 @@ export default function Navigation() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
           onClick={() => setIsMobileMenuOpen(false)}
-          className="fixed inset-0 bg-black/70 backdrop-blur-md z-[9998] md:hidden"
+          className="fixed inset-0 bg-black/70 backdrop-blur-md z-9998 md:hidden"
           style={{
             top: 0,
             left: 0,
@@ -306,7 +306,7 @@ export default function Navigation() {
         initial={{ x: "100%" }}
         animate={{ x: isMobileMenuOpen ? 0 : "100%" }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] z-[9999] md:hidden overflow-y-auto"
+        className="fixed top-0 right-0 h-screen w-80 max-w-[85vw] z-9999 md:hidden overflow-y-auto"
         style={{
           background:
             "linear-gradient(180deg, rgba(15, 15, 15, 0.99) 0%, rgba(26, 22, 22, 0.99) 100%)",

@@ -19,28 +19,28 @@ const PILLARS: Pillar[] = [
   {
     title: "التصميم المتميز",
     desc: "نبدع تصاميم معمارية فريدة تجمع بين الجمال والوظيفية، مع الاهتمام بكل تفصيلة لتحقيق رؤية عملائنا وتجاوز توقعاتهم",
-    image: "/images/2.jpg",
+    image: "/images/build4.jpg",
     stats: { value: "500+", label: "تصميم متميز" },
     color: "#C9A961",
   },
   {
     title: "التطوير المعماري",
     desc: "نطور مشاريع معمارية متكاملة من المفهوم إلى التنفيذ، باستخدام أحدث التقنيات والمواد لتحويل الأفكار إلى واقع ملموس",
-    image: "/images/3.jpg",
+    image: "/images/build5.jpg",
     stats: { value: "200+", label: "مشروع مطور" },
     color: "#D4B96A",
   },
   {
     title: "التطوير الحضري",
     desc: "نساهم في تطوير المجتمعات والمناطق الحضرية من خلال تصميم فضاءات متكاملة تعزز جودة الحياة وتنمي الانتماء المجتمعي",
-    image: "/images/33.jpg",
+    image: "/images/build6.jpg",
     stats: { value: "50+", label: "مشروع حضري" },
     color: "#E5C570",
   },
   {
     title: "التطوير المستدام",
     desc: "نلتزم بممارسات البناء المستدام والتصميم الأخضر، لخلق بيئات صحية تحافظ على الموارد وتحترم الطبيعة",
-    image: "/images/2.jpg",
+    image: "/images/build1.jpg",
     stats: { value: "95%", label: "كفاءة طاقة" },
     color: "#A67C52",
   },
@@ -319,7 +319,7 @@ export default function OurPillars() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="grid lg:grid-cols-2 gap-10 items-center"
+            className="grid lg:grid-cols-2 gap-10 items-center min-h-[300px] lg:min-h-[500px]"
           >
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -374,7 +374,7 @@ export default function OurPillars() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative rounded-2xl overflow-hidden group"
+                className="relative rounded-2xl overflow-hidden group w-full min-h-[250px] lg:min-h-[400px] aspect-4/3"
                 style={{
                   boxShadow:
                     "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.3)",
@@ -385,7 +385,7 @@ export default function OurPillars() {
                   alt={currentPillar.title}
                   width={800}
                   height={600}
-                  className="w-full h-auto"
+                  className="w-full h-full object-cover"
                   priority={activePillar === 0}
                 />
 
