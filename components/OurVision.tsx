@@ -39,7 +39,7 @@ export default function OurVision() {
       <motion.div style={{ y }} className="absolute inset-0 z-0 opacity-5">
         <div
           className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/images/build2black.jpg')` }}
+          style={{ backgroundImage: `url('/images/black5.png')` }}
         />
       </motion.div>
 
@@ -108,7 +108,7 @@ export default function OurVision() {
                 className="relative rounded-2xl overflow-hidden group"
               >
                 <Image
-                  src="/images/build2.jpg"
+                  src="/images/black5.png"
                   alt="رؤية IEDAR"
                   width={800}
                   height={600}
