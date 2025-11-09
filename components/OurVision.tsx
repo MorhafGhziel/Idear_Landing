@@ -147,13 +147,15 @@ export default function OurVision() {
           >
             <div>
               <h2
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-none"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
                 style={{
                   background:
                     "linear-gradient(135deg, #FFFFFF 0%, var(--secondary-light) 50%, var(--secondary) 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
+                  lineHeight: "1.1",
+                  paddingBottom: "0.25rem",
                 }}
               >
                 رؤيتنا

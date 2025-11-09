@@ -207,6 +207,8 @@ export default function OurPillars() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
+                lineHeight: "1.1",
+                paddingBottom: "0.25rem",
               }}
             >
               ركائزنا
