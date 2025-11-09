@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface SocialLink {
   name: string;
@@ -85,7 +86,13 @@ export default function Footer() {
               viewport={{ once: true }}
               className="mb-6"
             >
-              <div className="text-4xl font-bold">IEDAR</div>
+              <Image
+                src="/icons/iedar.svg"
+                alt="IEDAR Logo"
+                width={300}
+                height={100}
+                className="h-20 md:h-24 w-auto object-contain"
+              />
             </motion.div>
 
             <p className="text-white/80 leading-relaxed mb-6 max-w-md">

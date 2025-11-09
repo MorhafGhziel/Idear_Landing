@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const NAV_LINKS = ["قصتنا", "رسالتنا", "رؤيتنا", "قيمنا", "ركائزنا"];
 
@@ -73,14 +74,22 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-2">
         <div className="flex items-center justify-between flex-row-reverse">
-          <motion.div
+          <motion.a
+            href="#"
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
-            <div className="text-2xl font-bold text-white">IEDAR</div>
-          </motion.div>
+            <Image
+              src="/icons/iedar.svg"
+              alt="IEDAR Logo"
+              width={200}
+              height={70}
+              className="h-12 md:h-14 w-auto object-contain"
+              priority
+            />
+          </motion.a>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             {NAV_LINKS.map((item) => {
@@ -89,7 +98,7 @@ export default function Navigation() {
                 e.preventDefault();
                 const section = document.getElementById(item);
                 if (section) {
-                  const headerOffset = 80;
+                  const headerOffset = 60;
                   const elementPosition = section.getBoundingClientRect().top;
                   const offsetPosition =
                     elementPosition + window.pageYOffset - headerOffset;
