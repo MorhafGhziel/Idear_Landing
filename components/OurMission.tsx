@@ -160,7 +160,7 @@ export default function OurMission() {
               className="relative"
             >
               <div
-                className="inline-block rounded-2xl p-8 md:p-10 max-w-4xl"
+                className="relative inline-block rounded-2xl p-8 md:p-10 max-w-4xl overflow-hidden"
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.04) 100%)",
@@ -198,21 +198,47 @@ export default function OurMission() {
                 </p>
 
                 <div
-                  className="absolute top-0 right-0 w-16 h-16"
+                  className="absolute top-0 right-0"
                   style={{
-                    background:
-                      "radial-gradient(circle at top right, var(--secondary) 0%, transparent 70%)",
-                    opacity: 0.3,
+                    pointerEvents: "none",
+                    top: "1px",
+                    right: "1px",
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "0 1rem 0 0",
+                    overflow: "hidden",
                   }}
-                />
+                >
+                  <div
+                    className="absolute top-0 right-0 w-full h-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle at top right, var(--secondary) 0%, transparent 70%)",
+                      opacity: 0.3,
+                    }}
+                  />
+                </div>
                 <div
-                  className="absolute bottom-0 left-0 w-20 h-20"
+                  className="absolute bottom-0 left-0"
                   style={{
-                    background:
-                      "radial-gradient(circle at bottom left, var(--accent-bronze) 0%, transparent 70%)",
-                    opacity: 0.2,
+                    pointerEvents: "none",
+                    bottom: "1px",
+                    left: "1px",
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "0 0 0 1rem",
+                    overflow: "hidden",
                   }}
-                />
+                >
+                  <div
+                    className="absolute bottom-0 left-0 w-full h-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle at bottom left, var(--accent-bronze) 0%, transparent 70%)",
+                      opacity: 0.2,
+                    }}
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
