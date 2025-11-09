@@ -164,20 +164,31 @@ export default function Footer() {
                     whileHover={{
                       scale: 1.15,
                       y: -3,
-                      transition: { duration: 0.2 },
+                      transition: { duration: 0.15, ease: "easeOut" },
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group"
+                    className="relative w-10 h-10 rounded-lg flex items-center justify-center group cursor-pointer"
                     style={{
                       background:
                         "linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.08) 100%)",
                       border: "1px solid rgba(201, 169, 97, 0.2)",
+                      transition: "background 0.15s ease-out, border-color 0.15s ease-out",
                     }}
                     aria-label={social.name}
                   >
-                    <span className="text-secondary group-hover:text-secondary-light transition-colors duration-300">
+                    <span 
+                      className="relative z-10 text-secondary group-hover:text-secondary-light"
+                      style={{ transition: "color 0.15s ease-out" }}
+                    >
                       {social.icon}
                     </span>
+                    <motion.div
+                      className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none"
+                      style={{
+                        boxShadow: "0 0 24px rgba(201, 169, 97, 0.4)",
+                        transition: "opacity 0.15s ease-out",
+                      }}
+                    />
                   </motion.a>
                 ))}
               </motion.div>
@@ -209,15 +220,23 @@ export default function Footer() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
-                      whileHover={{ x: -4 }}
+                      whileHover={{ 
+                        x: -4,
+                        transition: { duration: 0.15, ease: "easeOut" }
+                      }}
                     >
                       <a
                         href={`#${link}`}
-                        className="text-white/60 hover:text-secondary transition-colors duration-300 inline-flex items-center gap-2 text-sm group"
+                        className="text-white/60 hover:text-secondary inline-flex items-center gap-2 text-sm group cursor-pointer"
+                        style={{ transition: "color 0.15s ease-out" }}
                       >
                         <motion.span
-                          className="w-1 h-1 rounded-full bg-secondary/50 group-hover:bg-secondary transition-colors duration-300"
-                          whileHover={{ scale: 1.5 }}
+                          className="w-1 h-1 rounded-full bg-secondary/50 group-hover:bg-secondary"
+                          whileHover={{ 
+                            scale: 1.5,
+                            transition: { duration: 0.15, ease: "easeOut" }
+                          }}
+                          style={{ transition: "background-color 0.15s ease-out" }}
                         />
                         {link}
                       </a>
@@ -253,13 +272,22 @@ export default function Footer() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.05 }}
-                      whileHover={{ x: 4 }}
-                      className="flex items-start gap-3 group"
+                      whileHover={{ 
+                        x: 4,
+                        transition: { duration: 0.15, ease: "easeOut" }
+                      }}
+                      className="flex items-start gap-3 group cursor-pointer"
                     >
-                      <span className="text-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <span 
+                        className="text-lg flex-shrink-0 group-hover:scale-110"
+                        style={{ transition: "transform 0.15s ease-out" }}
+                      >
                         {info.icon}
                       </span>
-                      <span className="text-white/70 group-hover:text-white/90 transition-colors duration-300 text-sm">
+                      <span 
+                        className="text-white/70 group-hover:text-white/90 text-sm"
+                        style={{ transition: "color 0.15s ease-out" }}
+                      >
                         {info.text}
                       </span>
                     </motion.li>
@@ -300,15 +328,23 @@ export default function Footer() {
             <div className="flex gap-6">
               <motion.a
                 href="#"
-                whileHover={{ y: -2 }}
-                className="hover:text-secondary transition-all duration-300"
+                whileHover={{ 
+                  y: -2,
+                  transition: { duration: 0.15, ease: "easeOut" }
+                }}
+                className="hover:text-secondary cursor-pointer"
+                style={{ transition: "color 0.15s ease-out" }}
               >
                 سياسة الخصوصية
               </motion.a>
               <motion.a
                 href="#"
-                whileHover={{ y: -2 }}
-                className="hover:text-secondary transition-all duration-300"
+                whileHover={{ 
+                  y: -2,
+                  transition: { duration: 0.15, ease: "easeOut" }
+                }}
+                className="hover:text-secondary cursor-pointer"
+                style={{ transition: "color 0.15s ease-out" }}
               >
                 الشروط والأحكام
               </motion.a>
