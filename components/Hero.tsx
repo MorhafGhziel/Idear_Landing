@@ -11,9 +11,13 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"], {
+    clamp: false,
+  });
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1], {
+    clamp: false,
+  });
 
   return (
     <div
@@ -25,12 +29,26 @@ export default function Hero() {
       }}
     >
       {/* Background Image with Parallax */}
-      <motion.div style={{ y, scale }} className="absolute inset-0 z-0">
+      <motion.div
+        style={{
+          y,
+          scale,
+          willChange: "transform",
+          transformStyle: "preserve-3d",
+        }}
+        className="absolute inset-0 z-0"
+        initial={false}
+      >
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: `url('/images/hero.png')`,
             filter: "brightness(0.4) contrast(1.1)",
+            transform: "translate3d(0, 0, 0)",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            WebkitTransform: "translate3d(0, 0, 0)",
+            willChange: "transform",
           }}
         />
         <div
