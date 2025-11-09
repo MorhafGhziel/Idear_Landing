@@ -64,7 +64,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 const CONTACT_INFO = [
   { icon: "📍", text: "الرياض، المملكة العربية السعودية" },
   { icon: "📧", text: "info@iedar.sa" },
-  { icon: "📞", text: "+966 XX XXX XXXX" },
+  { icon: "📞", text: "+966 571077778" },
 ];
 
 export default function Footer() {
@@ -289,7 +289,10 @@ export default function Footer() {
                       </span>
                       <span
                         className="text-white/70 group-hover:text-white/90 text-sm"
-                        style={{ transition: "color 0.15s ease-out" }}
+                        style={{
+                          transition: "color 0.15s ease-out",
+                          direction: info.icon === "📞" ? "ltr" : "rtl",
+                        }}
                       >
                         {info.text}
                       </span>
