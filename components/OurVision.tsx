@@ -20,7 +20,11 @@ export default function OurVision() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 1.05]);
+  const imageScale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [0.95, 1, 1.05]
+  );
 
   return (
     <section
@@ -96,12 +100,12 @@ export default function OurVision() {
           >
             <div className="relative">
               <motion.div
-                style={{ scale: imageScale }}
-                className="relative rounded-2xl overflow-hidden group"
                 style={{
+                  scale: imageScale,
                   boxShadow:
                     "0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.2)",
                 }}
+                className="relative rounded-2xl overflow-hidden group"
               >
                 <Image
                   src="/images/build2.jpg"
@@ -110,7 +114,7 @@ export default function OurVision() {
                   height={600}
                   className="w-full h-auto"
                 />
-                
+
                 <div
                   className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity duration-700"
                   style={{
@@ -223,7 +227,7 @@ export default function OurVision() {
                   whileHover={{ x: -6 }}
                   className="flex items-center gap-3 group cursor-pointer"
                 >
-                  <div className="relative flex-shrink-0">
+                  <div className="relative shrink-0">
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 45 }}
                       transition={{ duration: 0.3 }}
