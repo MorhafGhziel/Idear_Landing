@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion";
 
-import { useRef } from "react"
+import { useRef } from "react";
 
 export default function OurValues() {
+  const ref = useRef<HTMLDivElement>(null);
 
-  const ref = useRef<HTMLDivElement>(null)
-
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const values = [
     {
@@ -35,22 +34,16 @@ export default function OurValues() {
       title: "الإلهام",
       desc: "نصمم بيئات تحفز الإبداع وتلهم العقول والقلوب",
     },
-  ]
+  ];
 
   return (
-
     <section
-
       id="قيمنا"
-
       ref={ref}
-
-      className="relative py-32 bg-gradient-to-b from-background to-primary/5 overflow-hidden"
-
+      className="relative py-32 bg-linear-to-b from-background to-primary/5 overflow-hidden"
     >
-
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-secondary to-transparent" />
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -139,52 +132,31 @@ export default function OurValues() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-
         <div className="text-center mb-20">
           <motion.h2
-
             initial={{ opacity: 0, y: 30 }}
-
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-
             transition={{ duration: 0.8, delay: 0.1 }}
-
             className="text-5xl md:text-7xl font-bold mb-6 text-white"
-
           >
-
             قيمنا
-
           </motion.h2>
 
           <motion.div
-
             initial={{ opacity: 0, scaleX: 0 }}
-
             animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-
             transition={{ duration: 0.8, delay: 0.2 }}
-
             className="w-32 h-1 bg-secondary mb-8 mx-auto"
-
           />
 
           <motion.p
-
             initial={{ opacity: 0, y: 30 }}
-
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-
             transition={{ duration: 0.8, delay: 0.3 }}
-
             className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
-
           >
-
-            القيم التي نؤمن بها وتوجه عملنا في كل مشروع نبدعه
-
+            القيم التي نؤمن بها وتوجه عملنا في كل تصميم نبدعه
           </motion.p>
-
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -249,7 +221,7 @@ export default function OurValues() {
 
               {/* Top Border Glow */}
               <motion.div
-                className="absolute top-0 left-0 right-0 h-[1px] opacity-0 group-hover:opacity-100"
+                className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100"
                 initial={false}
                 transition={{ duration: 0.5 }}
                 style={{
@@ -271,7 +243,7 @@ export default function OurValues() {
 
                 {/* Description */}
                 <motion.p
-                  className="text-base md:text-lg text-white/75 leading-relaxed flex-grow"
+                  className="text-base md:text-lg text-white/75 leading-relaxed grow"
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -308,14 +280,8 @@ export default function OurValues() {
               />
             </motion.div>
           ))}
-
         </div>
-
       </div>
-
     </section>
-
-  )
-
+  );
 }
-
