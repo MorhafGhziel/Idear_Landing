@@ -182,7 +182,7 @@ export default function OurPillars() {
                 backgroundClip: "text",
               }}
             >
-              05
+              ٥
             </span>
             <div
               className="h-px flex-1 max-w-[150px]"

@@ -102,7 +102,7 @@ export default function OurMission() {
                   backgroundClip: "text",
                 }}
               >
-                02
+                ٢
               </span>
               <div
                 className="h-px flex-1 max-w-[150px]"

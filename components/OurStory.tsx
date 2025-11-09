@@ -78,7 +78,7 @@ export default function OurStory() {
                   backgroundClip: "text",
                 }}
               >
-                01
+                ١
               </span>
               <div
                 className="h-px flex-1 max-w-[150px]"

@@ -112,7 +112,7 @@ export default function OurValues() {
                 backgroundClip: "text",
               }}
             >
-              04
+              ٤
             </span>
             <div
               className="h-px flex-1 max-w-[150px]"

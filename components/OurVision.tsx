@@ -79,7 +79,7 @@ export default function OurVision() {
                 backgroundClip: "text",
               }}
             >
-              03
+              ٣
             </span>
             <div
               className="h-px flex-1 max-w-[150px]"
