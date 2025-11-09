@@ -211,13 +211,26 @@ export default function OurValues() {
                     }}
                   >
                     <div
-                      className="absolute inset-2 rounded-sm"
+                      className="absolute inset-2 rounded-sm flex items-center justify-center"
                       style={{
                         background:
                           "linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)",
                         border: "1px solid rgba(255, 255, 255, 0.2)",
                       }}
-                    />
+                    >
+                      <span
+                        className="text-xl font-bold"
+                        style={{
+                          color: "rgba(255, 255, 255, 0.95)",
+                          fontFamily: "var(--font-arabic), Arial, sans-serif",
+                        }}
+                      >
+                        {String(i + 1).replace(
+                          /\d/g,
+                          (d) => "٠١٢٣٤٥٦٧٨٩"[Number(d)]
+                        )}
+                      </span>
+                    </div>
                   </motion.div>
 
                   <h3
