@@ -321,37 +321,13 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-xs"
+            className="flex justify-center items-center text-white/50 text-xs"
           >
             <p className="flex items-center gap-2">
               <span>© 2025 IEDAR</span>
               <span className="w-1 h-1 rounded-full bg-secondary/50" />
               <span>جميع الحقوق محفوظة</span>
             </p>
-            <div className="flex gap-6">
-              <motion.a
-                href="#"
-                whileHover={{
-                  y: -2,
-                  transition: { duration: 0.15, ease: "easeOut" },
-                }}
-                className="hover:text-secondary cursor-pointer"
-                style={{ transition: "color 0.15s ease-out" }}
-              >
-                سياسة الخصوصية
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{
-                  y: -2,
-                  transition: { duration: 0.15, ease: "easeOut" },
-                }}
-                className="hover:text-secondary cursor-pointer"
-                style={{ transition: "color 0.15s ease-out" }}
-              >
-                الشروط والأحكام
-              </motion.a>
-            </div>
           </motion.div>
         </div>
       </div>
