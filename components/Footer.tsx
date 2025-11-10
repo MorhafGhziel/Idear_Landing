@@ -15,7 +15,7 @@ const NAV_LINKS = ["قصتنا", "رسالتنا", "رؤيتنا", "قيمنا",
 const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "twitter",
-    href: "#",
+    href: "https://x.com/iedar_sa",
     icon: (
       <svg
         className="w-4 h-4"
@@ -29,7 +29,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: "instagram",
-    href: "#",
+    href: "https://www.instagram.com/iedar.sa/",
     icon: (
       <svg
         className="w-4 h-4"
@@ -46,7 +46,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     ),
   },
   {
-    name: "tiktok",
+    name: "linkedin",
     href: "#",
     icon: (
       <svg
@@ -55,7 +55,7 @@ const SOCIAL_LINKS: SocialLink[] = [
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 010-3.49 2.89 2.89 0 013.7-.33V6.4a6.27 6.27 0 00-1-.08A6.15 6.15 0 006.17 18.1a6.15 6.15 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     ),
   },
@@ -153,6 +153,8 @@ export default function Footer() {
                   <motion.a
                     key={social.name}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
