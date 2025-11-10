@@ -1,10 +1,21 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,8 +42,8 @@ export default function Hero() {
       {/* Background Image with Parallax */}
       <motion.div
         style={{
-          y,
-          scale,
+          y: isMobile ? 0 : y,
+          scale: isMobile ? 1 : scale,
           willChange: "transform",
           transformStyle: "preserve-3d",
         }}
